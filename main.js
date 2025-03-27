@@ -9,6 +9,7 @@ let usertasks = [];
 addbtn.addEventListener("click",function(){
 
     let x = task.value;
+    task.value="";
     usertasks.push(x);
     showtasks();
 })
@@ -24,9 +25,11 @@ function showtasks() {
         taskrow += `
             <div class="flex justify-between items-center bg-gray-100 p-3 rounded-lg shadow-md gap-6 text-wrap	">
                 <p class="text-gray-800">${usertasks[i]}</p>
+                
                 <button onclick="deleteTask(${i})" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
                     Delete
                 </button>
+
             </div>
             
         `;
